@@ -1,0 +1,25 @@
+20220720	18:59:55	ddf038cf-ebdd-4ba2-9304-cd46d2151845	SyntaxError: Unexpected string in JSON at position 60
+20220720	19:03:29	d4cc808e-765f-47c4-9516-1b968185976e	Error: ENOENT: no such file or directory, stat 'c:\Users\97250\Desktop\הנדסת תוכנה\Full stack\project_fullStack\project_MangeWorkers\server_project_smartMange\views\404.html'
+20220720	19:03:33	b4ce35d8-f6b5-4b0e-b1e2-f7e99178c106	Error: ENOENT: no such file or directory, stat 'c:\Users\97250\Desktop\הנדסת תוכנה\Full stack\project_fullStack\project_MangeWorkers\server_project_smartMange\views\404.html'
+20220720	19:04:41	e68aa591-460a-4312-8e70-16c384273390	SyntaxError: Unexpected number in JSON at position 113
+20220720	19:04:47	0ba6c693-c568-4a31-8a0a-29c8f2bf2960	SyntaxError: Unexpected string in JSON at position 113
+20220721	07:11:47	f83063d8-5c9b-4d68-9f5d-1237aec60bdf	Error: ENOENT: no such file or directory, stat 'c:\Users\97250\Desktop\הנדסת תוכנה\Full stack\project_fullStack\project_MangeWorkers\server_project_smartMange\views\404.html'
+20220721	07:26:36	5a42130b-19ac-4f05-8d93-7a82c7130bb6	SyntaxError: Unexpected token } in JSON at position 117
+20220721	07:26:53	447e4198-4f85-4810-9953-799d96af873e	SyntaxError: Unexpected token } in JSON at position 117
+20220721	08:04:43	005275ef-13bd-48d6-b5be-aee4a9e41f9e	SyntaxError: Unexpected token } in JSON at position 63
+20220721	08:04:44	76262d94-6294-4c98-9692-1b284e5cc15c	SyntaxError: Unexpected token } in JSON at position 63
+20220721	08:44:27	8fd909ce-4830-4e59-9c39-af416c49ab3e	SyntaxError: Unexpected token " in JSON at position 4
+20220721	08:44:33	55d086cc-4df7-4758-888f-021ac484bd21	SyntaxError: Unexpected token e in JSON at position 4
+20220721	10:06:41	6386ed2a-2855-4f85-a3ba-5b3bbe1f9512	SyntaxError: Unexpected token } in JSON at position 129
+20220721	11:27:08	c729214d-172f-42b9-8179-4182703cc30c	SyntaxError: Unexpected token } in JSON at position 35
+20220721	12:02:13	d7e81a5c-feda-4155-a070-04b2384e3ee8	SyntaxError: Unexpected string in JSON at position 59
+20220721	12:03:09	1436e966-69c4-4dc3-837a-4d6cdc73d276	SyntaxError: Unexpected token } in JSON at position 59
+20220721	12:03:24	62722bca-0a3f-4320-a224-2f9593805b3d	SyntaxError: Unexpected token } in JSON at position 29
+20220721	14:24:55	3091c470-381e-4ded-813d-fc485a74f82c	SyntaxError: Unexpected token } in JSON at position 55
+20220721	14:28:01	83dec366-f157-4b79-94c6-47a3316d8c3b	SyntaxError: Unexpected string in JSON at position 56
+20220721	14:30:44	0a1b14d7-3668-41b6-9a78-0136e00342cf	SyntaxError: Unexpected token } in JSON at position 51
+20220721	14:31:01	6c24f272-e8a7-4d8f-a895-b1d683f05d04	SyntaxError: Unexpected token } in JSON at position 36
+20220721	14:39:16	a1d96cdd-c232-4a55-9188-f839f7b1a01f	SyntaxError: Unexpected token } in JSON at position 87
+20220721	14:41:41	8d425a14-cb14-4bca-aa14-a79b4f26243e	SyntaxError: Unexpected token } in JSON at position 71
+20220721	14:42:50	66fb0cd4-a13a-4085-af03-d1a15e88b1b7	SyntaxError: Unexpected token } in JSON at position 99
+20220721	14:43:20	d640e8a3-cf89-4f39-bb72-588489b082ae	SyntaxError: Unexpected string in JSON at position 101
