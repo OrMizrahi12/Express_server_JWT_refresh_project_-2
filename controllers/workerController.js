@@ -9,18 +9,17 @@ const getAllWorker = async (req, res) => {
 const createNewWorker = async (req, res) => {
     const { firstname,lastname, email,role,seniority } = req.body;
     let arr = []
-    if (!firstname|| !lastname|| !email ||  !role ||!seniority) {
-        
+    if (!firstname|| !lastname|| !email ||  !role ||!seniority) {      
         !firstname && arr.push('firstname')
         !lastname && arr.push('lastname')
         !email && arr.push('email')
         !role && arr.push('role')
-        !seniority && arr.push('seniority')
-        
+        !seniority && arr.push('seniority')      
         return res.status(400).json({ 'you must fill:':  arr });
     } 
     const duplicate = await Worker.findOne({ email:email }).exec();
-    if (duplicate) return res.sendStatus(409); //Conflict 
+    if (duplicate)
+        return res.sendStatus(409); //Conflict 
     try {
         const result = await Worker.create({
             firstname: req.body.firstname,
@@ -48,24 +47,28 @@ const updateWorker = async (req, res) => {
     }
 
     const duplicate = await Worker.findOne({ email:email }).exec();
-    if (duplicate) return res.sendStatus(409); //Conflict 
-    
+    if (duplicate) 
+        return res.sendStatus(409); //Conflict 
     if(!firstname || !lastname || !email || !role || !seniority){
         return res.status(400).json({ 'message': ' parameters is required.' });
     }
    
-    if (req.body?.firstname) worker.firstname = req.body.firstname;
-    if (req.body?.lastname) worker.lastname = req.body.lastname;
-    if (req.body?.email) worker.email = req.body.email;
-    if (req.body?.role) worker.role = req.body.role;
-    if (req.body?.seniority) worker.seniority = req.body.seniority;
+    if (req.body?.firstname) 
+        worker.firstname = req.body.firstname;
+    if (req.body?.lastname)
+        worker.lastname = req.body.lastname;
+    if (req.body?.email)
+        worker.email = req.body.email;
+    if (req.body?.role)
+        worker.role = req.body.role;
+    if (req.body?.seniority) 
+        worker.seniority = req.body.seniority;
     const result = await worker.save();
     res.json(result);
 }
-
 const deleteWorker = async (req, res) => {
-    if (!req?.params?._id) return res.status(400).json({ 'message': 'Worker ID required.' });
-
+    if (!req?.params?._id) 
+        return res.status(400).json({ 'message': 'Worker ID required.' });
     const worker = await Worker.findOne({ _id: req.params._id }).exec();
     if (!worker) {
         return res.status(204).json({ "message": `No Worker matches ID ${req.params._id}.` });
@@ -75,15 +78,14 @@ const deleteWorker = async (req, res) => {
 }
 
 const getWorker = async (req, res) => {
-    if (!req?.params?._id) return res.status(400).json({ 'message': 'Worker ID required.' });
-
+    if (!req?.params?._id)
+        return res.status(400).json({ 'message': 'Worker ID required.' });
     const worker = await Worker.findOne({ _id: req.params._id }).exec();
     if (!worker) {
         return res.status(204).json({ "message": `No Worker matches ID ${req.params._id}.` });
     }
     res.json(worker);
 }
-
 module.exports = {
     getAllWorker,
     createNewWorker,
