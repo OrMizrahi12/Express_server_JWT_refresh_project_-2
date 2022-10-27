@@ -40,19 +40,21 @@ const updatePost = async (req, res) => {
     if (!post) {
         return res.status(204).json({ "message": `No post matches ID ${req.body._id}.` });
     }
-    if(!title || !userId || !body) return res.status(400).json({"msg":"you must put all diteils"})
-
-    if (req.body?.title) post.title = req.body.title;
-    if (req.body?.body) post.body = req.body.body;
-    if (req.body?.userId) post.userId = req.body.userId;
-
+    if(!title || !userId || !body)
+        return res.status(400).json({"msg":"you must put all diteils"})
+    if (req.body?.title)
+        post.title = req.body.title;
+    if (req.body?.body)
+        post.body = req.body.body;
+    if (req.body?.userId)
+        post.userId = req.body.userId;
     const result = await post.save();
     res.json(result);
 }
 
 const deletePost = async (req, res) => {
-    if (!req?.params?._id) return res.status(400).json({ 'message': 'post ID required.' });
-
+    if (!req?.params?._id)
+        return res.status(400).json({ 'message': 'post ID required.' });
     const post = await Post.findOne({ _id: req.params._id }).exec();
     if (!post) {
         return res.status(204).json({ "message": `No post matches ID ${req.params._id}.` });
@@ -62,15 +64,14 @@ const deletePost = async (req, res) => {
 }
 
 const getPost = async (req, res) => {
-    if (!req?.params?._id) return res.status(400).json({ 'message': 'Worker ID required.' });
-
+    if (!req?.params?._id)
+        return res.status(400).json({ 'message': 'Worker ID required.' });
     const post = await Post.findOne({ _id: req.params._id }).exec();
     if (!post) {
         return res.status(204).json({ "message": `No post matches ID ${req.params._id}.` });
     }
     res.json(post);
 }
-
 module.exports = {
     getAllPosts,
     createNewPost,
