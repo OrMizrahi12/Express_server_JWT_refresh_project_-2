@@ -40,15 +40,14 @@ const updateUser = async (req, res) => {
 
         return res.status(400).json({ 'you forgat': arr });
     }
-
     const duplicate = await User.findOne({ email: email ,user: user}).exec();
-    if (duplicate) return res.sendStatus(409).json({"msg": "this name or email is exsist"}) 
+    if (duplicate)
+        return res.sendStatus(409).json({"msg": "this name or email is exsist"}) 
 
     const founduser = await User.findOne({ _id: req.params._id }).exec();
     if (!founduser) {
         return res.status(204).json({ 'message': `User ID ${req.params._id} not found` });
     }
-
     const accessToken = jwt.sign(
         {
             "UserInfo": {
@@ -65,25 +64,21 @@ const updateUser = async (req, res) => {
         { expiresIn: '1d' }
     );
     founduser.refreshToken = refreshToken;
-
-    res.cookie('jwt', refreshToken, { httpOnly: true, sameSite: 'None', maxAge: 24 * 60 * 60 * 1000 }); // 
-    // secure: true
-   
+    res.cookie('jwt', refreshToken, { httpOnly: true, sameSite: 'None', maxAge: 24 * 60 * 60 * 1000 }); //    
     const hashedPwd = await bcrypt.hash(pwd, 10);
 
-    if (req.body?.email) founduser.email = req.body.email;
-    if (req.body?.pwd) founduser.password = hashedPwd;
-    if (req.body?.user) founduser.username = req.body.user;
-
+    if (req.body?.email) 
+        founduser.email = req.body.email;
+    if (req.body?.pwd) 
+        founduser.password = hashedPwd;
+    if (req.body?.user)
+        founduser.username = req.body.user;
     const result = await founduser.save();
     res.json(result);
-
-
 }
 
 module.exports = {
     getAllUsers,
     deleteUser,
     getUser
-    
 }
