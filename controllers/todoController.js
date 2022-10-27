@@ -9,8 +9,7 @@ const getAllTodos = async (req, res) => {
 const createNewTodo = async (req, res) => {
     const { todo,Completed,userId} = req.body;
     let arr = []
-    if (!todo|| !Completed ||!userId) {
-        
+    if (!todo|| !Completed ||!userId) {       
         !todo && arr.push('todo')
         !Completed && arr.push('Completed') 
         !userId && arr.push('userId')
@@ -57,7 +56,7 @@ const deleteTodo = async (req, res) => {
     if (!todo) {
         return res.status(204).json({ "message": `No todo matches ID ${req.params._id}.` });
     }
-    const result = await todo.deleteOne(); //{ _id: req.body.id }
+    const result = await todo.deleteOne();
     res.json(result);
 }
 
@@ -70,7 +69,6 @@ const getTodo = async (req, res) => {
     }
     res.json(todo);
 }
-
 module.exports = {
     getAllTodos,
     createNewTodo,
